@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>常用标签详解</title>
+	<style>
+		table{
+			border-collapse: collapse;  /* 记住：表示border没有空隙，即去掉border的空隙*/
+		}
+	</style>
+</head>
+<body>
+	<a href="index2.html">link</a>
+	<form action="users" method="post">
+		<label for='xxx'>用户名:</label><input type="text" name="username" id='xxx'>
+		<label for='xxx'>密码:</label><input type="password" name="password" id='xxx'>
+		
+		<input type="checkbox">爱我   <!-- 点爱我会没反应,只能点前面小框才能勾上。 -->
+		<input type="checkbox" id='xxx'><label for='xxx'>爱我</label>  <!-- 这个时候点爱我也能勾上了。for就是‘为了’意思。 上面用户名和密码和这个同理,在label中加上for,在input中加上id,这个时候点击‘用户名’这三个字，就能选中输入框的。所以label的for和input的id是一对，要同时出现。或者用label把input包裹起来也可以。如下面用户名示例 -->
+		<label>用户名:<input type="text" name="username"></label>
+
+		
+		喜欢的水果:
+		<label><input type="checkbox" name='fruit' value='orange'>橘子</label>
+		<label><input type="checkbox" name='fruit' value='banana'>香蕉</label>
+
+		爱我：
+		<label><input type="radio" value='yes'>Yes</label>
+		<label><input type="radio" value='no'>No</label>  <!-- 里面都没有name属性，那么这两个都能被选中。 -->
+
+		爱我：
+		<label><input type="radio" value='yes' name="loveme">Yes</label>
+		<label><input type="radio" value='no' name="loveme">No</label>  <!-- 里面都添加上name属性,那么只能选中一个。即点Yes，No就点不了；点No,Yes就点不了。 -->
+
+		
+		<select name="group" multiple>  <!-- multiple属性表示:可以多选。 -->
+			<option value=''>-</option>
+			<option value='1'>第一组</option>
+			<option value='2'>第二组</option>
+			<option value='3' disabled>第三组</option>  <!-- 里面加上disabled就不能选中了。 -->
+			<option value='4' selected>第四组</option>   <!-- 里面加上selected默认选中第四组。 -->
+		</select>
+
+
+		<textarea style='resize:none width:200px;height:200px;' name='爱好' cols='30' rows='10'></textarea>  <!-- 里面不加style='resize:none'的话可以任意扩大，加了的话就固定大小了但是可以用css控制宽高为多少;或者用cols和rows来控制行与列。但是用css控制宽高比较精确。建议用css来控制宽高。注意记得里面给个name。没有name不行。 -->
+
+		<input type="submit" value="提交">
+		<button>button</button> <!--  input与button区别只有一个：即input是没有子元素的，但是button有子元素。 -->
+	</form>
+
+
+	
+	<table border=1>
+		<colgroup>
+			<col bgcolor=red width=100>   <!-- bgcolor不推荐用了 -->
+			<col width=200>      <!-- col控制每一列的宽高,col要在colgroup里面使用。 -->
+			<col width=100>
+			<col width=70>
+		</colgroup>
+		<thead>
+			<tr>
+				<th>项目</th><th>姓名</th><th>班级</th><th>分数</th>  
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<th></th><td>小明</td><td>1</td><td>94</td>
+				<th></th><td>小红</td><td>2</td><td>96</td>
+			</tr>
+			<tr>
+				<th>平均分</th><td></td><td></td><td>95</td>
+			</tr>
+		</tbody>
+		<tfoot>
+			<tr>
+				<th>总分</th><td></td><td></td><td>190</td>  <!-- td：table data表示数据 ; tr:tbale row表示行。th:table head表示:表头-->	
+			</tr>
+		</tfoot>
+	</table>
+
+</body>
+</html>
